@@ -1,0 +1,33 @@
+<mvc:View
+    xmlns:table="sap.ui.table"
+    xmlns:smarttable="sap.ui.comp.smarttable"
+    controllerName="ui5odataemptyrows.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m">
+    <Page
+        id="page"
+        title="{i18n>title}">
+        <smarttable:SmartTable
+            id="CategoriesSmartTable"
+            entitySet="Categories"
+            enableAutoBinding="true"
+            enableAutoColumnWidth="true"
+            height="50%"
+            beforeRebindTable="onCategoriesSmartTableBeforeRebind"
+            editable="true">
+            <table:Table
+                id="CategoriesTable"
+                selectionMode="Single"
+                rowSelectionChange="handleCategoriesSelectionChange" />
+        </smarttable:SmartTable>
+        <smarttable:SmartTable
+            id="ProductsSmartTable"
+            entitySet="Products"
+            tableBindingPath="Products"
+            enableAutoColumnWidth="true"
+            height="50%"
+            beforeRebindTable="onProductsSmartTableBeforeRebind"
+            editable="true" />
+    </Page>
+</mvc:View>
